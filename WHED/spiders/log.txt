@@ -1,0 +1,162 @@
+INFO:scrapy.utils.log:Scrapy 2.6.1 started (bot: WHED)
+INFO:scrapy.utils.log:Versions: lxml 4.9.1.0, libxml2 2.9.14, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 22.4.0, Python 3.10.4 (main, Jun 29 2022, 12:14:53) [GCC 11.2.0], pyOpenSSL 21.0.0 (OpenSSL 3.0.2 15 Mar 2022), cryptography 3.4.8, Platform Linux-5.15.0-46-generic-x86_64-with-glibc2.35
+INFO:scrapy.crawler:Overridden settings:
+{'BOT_NAME': 'WHED',
+ 'DUPEFILTER_CLASS': 'scrapy.dupefilters.BaseDupeFilter',
+ 'LOGSTATS_INTERVAL': 0,
+ 'NEWSPIDER_MODULE': 'WHED.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['WHED.spiders']}
+DEBUG:scrapy.utils.log:Using reactor: twisted.internet.epollreactor.EPollReactor
+INFO:scrapy.extensions.telnet:Telnet Password: 3f8094af89890869
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+[]
+INFO:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6032
+INFO:scrapy.core.engine:Spider opened
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://www.whed.net/robots.txt> (referer: None)
+DEBUG:filelock:Attempting to acquire lock 139970689773776 on /home/ifti/.cache/python-tldextract/3.10.4.final__usr__7d8fdf__tldextract-3.3.1/publicsuffix.org-tlds/de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+DEBUG:filelock:Lock 139970689773776 acquired on /home/ifti/.cache/python-tldextract/3.10.4.final__usr__7d8fdf__tldextract-3.3.1/publicsuffix.org-tlds/de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+DEBUG:filelock:Attempting to release lock 139970689773776 on /home/ifti/.cache/python-tldextract/3.10.4.final__usr__7d8fdf__tldextract-3.3.1/publicsuffix.org-tlds/de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+DEBUG:filelock:Lock 139970689773776 released on /home/ifti/.cache/python-tldextract/3.10.4.final__usr__7d8fdf__tldextract-3.3.1/publicsuffix.org-tlds/de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://www.whed.net/results_institutions.php?Chp1=Algeria&Chp0=&Chp2=&Chp4=> (referer: None)
+INFO:scrapy.utils.log:Scrapy 2.6.1 started (bot: WHED)
+INFO:scrapy.utils.log:Versions: lxml 4.9.1.0, libxml2 2.9.14, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 22.4.0, Python 3.10.4 (main, Jun 29 2022, 12:14:53) [GCC 11.2.0], pyOpenSSL 21.0.0 (OpenSSL 3.0.2 15 Mar 2022), cryptography 3.4.8, Platform Linux-5.15.0-46-generic-x86_64-with-glibc2.35
+INFO:scrapy.crawler:Overridden settings:
+{'BOT_NAME': 'WHED',
+ 'DUPEFILTER_CLASS': 'scrapy.dupefilters.BaseDupeFilter',
+ 'LOGSTATS_INTERVAL': 0,
+ 'NEWSPIDER_MODULE': 'WHED.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['WHED.spiders']}
+DEBUG:scrapy.utils.log:Using reactor: twisted.internet.epollreactor.EPollReactor
+INFO:scrapy.extensions.telnet:Telnet Password: f652f447c0a2daad
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+[]
+INFO:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6033
+INFO:scrapy.core.engine:Spider opened
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://www.whed.net/robots.txt> (referer: None)
+DEBUG:filelock:Attempting to acquire lock 140289965846160 on /home/ifti/.cache/python-tldextract/3.10.4.final__usr__7d8fdf__tldextract-3.3.1/publicsuffix.org-tlds/de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+DEBUG:filelock:Lock 140289965846160 acquired on /home/ifti/.cache/python-tldextract/3.10.4.final__usr__7d8fdf__tldextract-3.3.1/publicsuffix.org-tlds/de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+DEBUG:filelock:Attempting to release lock 140289965846160 on /home/ifti/.cache/python-tldextract/3.10.4.final__usr__7d8fdf__tldextract-3.3.1/publicsuffix.org-tlds/de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+DEBUG:filelock:Lock 140289965846160 released on /home/ifti/.cache/python-tldextract/3.10.4.final__usr__7d8fdf__tldextract-3.3.1/publicsuffix.org-tlds/de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://www.whed.net/results_institutions.php?Chp1=Algeria&Chp0=&Chp2=&Chp4=> (referer: None)
+DEBUG:scrapy.downloadermiddlewares.retry:Retrying <GET file:///robots.txt> (failed 1 times): [Errno 2] No such file or directory: '/robots.txt'
+WARNING:py.warnings:/home/ifti/.local/lib/python3.10/site-packages/scrapy/core/engine.py:276: ScrapyDeprecationWarning: Passing a 'spider' argument to ExecutionEngine.download is deprecated
+  return self.download(result, spider) if isinstance(result, Request) else result
+
+DEBUG:scrapy.downloadermiddlewares.retry:Retrying <GET file:///robots.txt> (failed 2 times): [Errno 2] No such file or directory: '/robots.txt'
+ERROR:scrapy.downloadermiddlewares.retry:Gave up retrying <GET file:///robots.txt> (failed 3 times): [Errno 2] No such file or directory: '/robots.txt'
+ERROR:scrapy.downloadermiddlewares.robotstxt:Error downloading <GET file:///robots.txt>: [Errno 2] No such file or directory: '/robots.txt'
+Traceback (most recent call last):
+  File "/home/ifti/.local/lib/python3.10/site-packages/scrapy/core/downloader/middleware.py", line 49, in process_request
+    return (yield download_func(request=request, spider=spider))
+  File "/home/ifti/.local/lib/python3.10/site-packages/twisted/internet/defer.py", line 190, in maybeDeferred
+    result = f(*args, **kwargs)
+  File "/home/ifti/.local/lib/python3.10/site-packages/scrapy/core/downloader/handlers/file.py", line 13, in download_request
+    with open(filepath, 'rb') as fo:
+FileNotFoundError: [Errno 2] No such file or directory: '/robots.txt'
+DEBUG:scrapy.downloadermiddlewares.retry:Retrying <GET file:///%2A%5B%40id%3D%22contenu%22%5D/form%5B2%5D/div/p> (failed 1 times): [Errno 2] No such file or directory: '/*[@id="contenu"]/form[2]/div/p'
+DEBUG:scrapy.downloadermiddlewares.retry:Retrying <GET file:///%2A%5B%40id%3D%22contenu%22%5D/form%5B2%5D/div/p> (failed 2 times): [Errno 2] No such file or directory: '/*[@id="contenu"]/form[2]/div/p'
+ERROR:scrapy.downloadermiddlewares.retry:Gave up retrying <GET file:///%2A%5B%40id%3D%22contenu%22%5D/form%5B2%5D/div/p> (failed 3 times): [Errno 2] No such file or directory: '/*[@id="contenu"]/form[2]/div/p'
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://www.whed.net/results_institutions.php?Chp1=&Chp0=pakistan&Chp2=&Chp4=&nbr_ref_pge=100> (referer: None)
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.whed.net:443
+DEBUG:urllib3.connectionpool:https://www.whed.net:443 "GET /results_institutions.php HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.whed.net:443
+DEBUG:urllib3.connectionpool:https://www.whed.net:443 "GET /results_institutions.php?Chp1=&Chp0=pakistan&Chp2=&Chp4=&nbr_ref_pge=100 HTTP/1.1" 200 None
+INFO:scrapy.utils.log:Scrapy 2.6.1 started (bot: WHED)
+INFO:scrapy.utils.log:Versions: lxml 4.9.1.0, libxml2 2.9.14, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 22.4.0, Python 3.10.4 (main, Jun 29 2022, 12:14:53) [GCC 11.2.0], pyOpenSSL 21.0.0 (OpenSSL 3.0.2 15 Mar 2022), cryptography 3.4.8, Platform Linux-5.15.0-46-generic-x86_64-with-glibc2.35
+INFO:scrapy.crawler:Overridden settings:
+{'BOT_NAME': 'WHED',
+ 'DUPEFILTER_CLASS': 'scrapy.dupefilters.BaseDupeFilter',
+ 'LOGSTATS_INTERVAL': 0,
+ 'NEWSPIDER_MODULE': 'WHED.spiders',
+ 'SPIDER_MODULES': ['WHED.spiders']}
+DEBUG:scrapy.utils.log:Using reactor: twisted.internet.epollreactor.EPollReactor
+INFO:scrapy.extensions.telnet:Telnet Password: f63e8bb3b7855545
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+[]
+INFO:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6043
+INFO:scrapy.core.engine:Spider opened
+DEBUG:filelock:Attempting to acquire lock 140222156247808 on /home/ifti/.cache/python-tldextract/3.10.4.final__usr__7d8fdf__tldextract-3.3.1/publicsuffix.org-tlds/de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+DEBUG:filelock:Lock 140222156247808 acquired on /home/ifti/.cache/python-tldextract/3.10.4.final__usr__7d8fdf__tldextract-3.3.1/publicsuffix.org-tlds/de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+DEBUG:filelock:Attempting to release lock 140222156247808 on /home/ifti/.cache/python-tldextract/3.10.4.final__usr__7d8fdf__tldextract-3.3.1/publicsuffix.org-tlds/de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+DEBUG:filelock:Lock 140222156247808 released on /home/ifti/.cache/python-tldextract/3.10.4.final__usr__7d8fdf__tldextract-3.3.1/publicsuffix.org-tlds/de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://www.whed.net/results_institutions.php?Chp1=&Chp0=pakistan&Chp2=&Chp4=&nbr_ref_pge=100> (referer: None)
+DEBUG:scrapy.downloadermiddlewares.retry:Retrying <GET file:///%2A%5B%40id%3D%22contenu%22%5D/form%5B2%5D/div/div/a> (failed 1 times): [Errno 2] No such file or directory: '/*[@id="contenu"]/form[2]/div/div/a'
+DEBUG:scrapy.downloadermiddlewares.retry:Retrying <GET file:///%2A%5B%40id%3D%22contenu%22%5D/form%5B2%5D/div/div/a> (failed 2 times): [Errno 2] No such file or directory: '/*[@id="contenu"]/form[2]/div/div/a'
+ERROR:scrapy.downloadermiddlewares.retry:Gave up retrying <GET file:///%2A%5B%40id%3D%22contenu%22%5D/form%5B2%5D/div/div/a> (failed 3 times): [Errno 2] No such file or directory: '/*[@id="contenu"]/form[2]/div/div/a'
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://www.whed.net/results_institutions.php?Chp1=&Chp0=pakistan&Chp2=&Chp4=&nbr_ref_pge=100> (referer: None)
+DEBUG:scrapy.downloadermiddlewares.retry:Retrying <GET file:///media/ifti/Shared%20Storage/DvizDocument/WorkSpace/03-WHED/WHED/WHED/spiders/Afghanistan> (failed 1 times): [Errno 2] No such file or directory: '/media/ifti/Shared Storage/DvizDocument/WorkSpace/03-WHED/WHED/WHED/spiders/Afghanistan'
+DEBUG:scrapy.downloadermiddlewares.retry:Retrying <GET file:///media/ifti/Shared%20Storage/DvizDocument/WorkSpace/03-WHED/WHED/WHED/spiders/Afghanistan> (failed 2 times): [Errno 2] No such file or directory: '/media/ifti/Shared Storage/DvizDocument/WorkSpace/03-WHED/WHED/WHED/spiders/Afghanistan'
+ERROR:scrapy.downloadermiddlewares.retry:Gave up retrying <GET file:///media/ifti/Shared%20Storage/DvizDocument/WorkSpace/03-WHED/WHED/WHED/spiders/Afghanistan> (failed 3 times): [Errno 2] No such file or directory: '/media/ifti/Shared Storage/DvizDocument/WorkSpace/03-WHED/WHED/WHED/spiders/Afghanistan'
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100> (referer: None)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://www.whed.net/results_institutions.php?Chp1=Pakistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100> (referer: None)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100> (referer: None)
