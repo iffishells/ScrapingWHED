@@ -160,3 +160,4 @@ ERROR:scrapy.downloadermiddlewares.retry:Gave up retrying <GET file:///media/ift
 DEBUG:scrapy.core.engine:Crawled (200) <GET https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100> (referer: None)
 DEBUG:scrapy.core.engine:Crawled (200) <GET https://www.whed.net/results_institutions.php?Chp1=Pakistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100> (referer: None)
 DEBUG:scrapy.core.engine:Crawled (200) <GET https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100> (referer: None)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100> (referer: None)

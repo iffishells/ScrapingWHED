@@ -12,17 +12,20 @@ import scrapy
 import requests
 import logging
 from scrapy import FormRequest
-logging.basicConfig(filename="log.txt", level=logging.DEBUG)
+# logging.basicConfig(filename="log.txt", level=logging.DEBUG)
 
 class WHEDSPIDER(scrapy.Spider):
-    name = "World_higher_education_database"
+    break_page_conditon = 0
+    CountryName = []
+    UniversityName = []
+    name = "World_higher_education_database__"
     root_url = 'https://www.whed.net/results_institutions.php'
     payload = { 'Chp1': '',
                 'Chp0':'', 
                 'Chp2':'',
                 'Chp4': '',
                 'nbr_ref_pge': '100',
-                'debut' : ''
+                'debut' : '0'
                     }
 
 
@@ -57,11 +60,17 @@ class WHEDSPIDER(scrapy.Spider):
     def parse_counteries_names(self,response):
         logging.debug('####################### in parse_counteries_names function#####################################')
         Country_names = response.xpath('//select[@id="Chp1"]/option/text()').getall()
-
+        count = 0
         for index in range(1 , len(Country_names)):
             
             self.payload['Chp1'] = Country_names[index]
             print(self.payload)
+            
+            # self.CountryName.append(Country_names[index])
+            
+            
+        
+            
             
             yield FormRequest(
                     url=self.root_url,
@@ -69,14 +78,23 @@ class WHEDSPIDER(scrapy.Spider):
                     formdata=self.payload,
                     callback=self.parse_universites_name,
                     cookies=self.cookies,
-                    headers=self.headers
+                    headers=self.headers,
+                    meta = {'Country_name' : Country_names[index]}
+
                 )
-            break
+            if index > 5:
+                break
+                
+            
+            
+        
     def parse_page_handler(self,response):
         
-        print(f'parse_page_handler has been called')
-        self.payload['debut'] = '100'
-        # print(self.payload)
+        print(f'parse_page_handler function has been called')
+        # payload = self.payload.copy()
+        
+        self.payload['debut'] = str(int(self.payload['debut']) + 100)
+        print(f'payload {self.payload}')
 
         yield FormRequest(
                     url=self.root_url,
@@ -91,102 +109,41 @@ class WHEDSPIDER(scrapy.Spider):
 
 
     def parse_universites_name(self,response ):
-        print(f'universities link of country : {response.url}')
+        # print(f'universities link of country : {response.url}')
         # logging.debug('this is response : ',response)
-        Total_Universites = int(response.xpath('//*[@id="contenu"]/form[2]/div/p/text()').get().split(' ')[-1])
         
-        print(f' Universites lenght {Total_Universites}')
+        All_Universites = int(response.xpath('//*[@id="contenu"]/form[2]/div/p/text()').get().split(' ')[-1])
+        Total_Universites_on_current_page = len(response.xpath('//*[@id="results"]/li'))
+        
+        # Number_of_pages = len(response.xpath('//*[@id="contenu"]/div/div/a').getall())
+        
+        # print('Number of pages : ',Number_of_pages)
+        # print('All Universites in current page : ',All_Universites)
+        # print(f' Universites lenght {Total_Universites_on_current_page}')
   
 
-        for index in range(1, Total_Universites):
+        for index in range(1, Total_Universites_on_current_page+1):
             X_Path_Universites_Name = f'//*[@id="results"]/li[{index}]/div[2]/h3/a/text()'
+            
             University_Name = response.xpath(X_Path_Universites_Name).get()
+            self.break_page_conditon +=1
+            count_name  = response.xpath('//*[@id="contenu"]/form[1]/p[2]/strong/text()').get().split('=')[1]
+
+            print(f'Country Name  : {count_name} and University Name : {University_Name.strip()} and index : {index}')
+            self.UniversityName.append(University_Name.strip())
             
-            print(f'University Name : {University_Name}')
-            if University_Name is None:
-                response.meta['count'] = index
-
-                yield scrapy.Request(url = self.root_url , callback=self.parse_page_handler,dont_filter=True )
-
-        # universities = response.xpath('//*[@title="More details"]/text()').getall()
-        # universities = [university.strip() for university in universities]
-        # for university in universities:
-            # print(university)
-
-    # # def parse(self, response):
-    #     Country_names = response.xpath('//select[@id="Chp1"]/option/text()').getall()
-        
-        
-    #     for index in range(1 , len(Country_names)):
-    #         logging.debug(Country_names[index])
+                
             
-            
-    #         self.request(Country_names[index])
-
-
-        # yield {
-        #     'Country Names ' : Country_names
-        # }
+        print(f'All Universites : {All_Universites}  and break condition : {self.break_page_conditon}')
         
-      
-
-# class WHEDSPIDER(scrapy.Spider):
-#     name = 'World_higher_education_database'
-#     institute_url = "https://www.whed.net/results_institutions.php"
-
-#     payload = {
-#         'Chp1': 'Afghanistan',
-#         'Chp0': '',
-#         'Chp2': '',
-#         'Chp4': '',
-#     }
-
-#     cookies = {
-#         'PHPSESSID': '9195bbb4ni1td1v4t2ulodhmte',
-#     }
+        if All_Universites != self.break_page_conditon:
+            print('Calling for more pages')
+            print(f'payload {self.payload}')
+            yield scrapy.Request(url = self.root_url , callback=self.parse_page_handler  ,dont_filter=True  )
+        
+        elif All_Universites == self.break_page_conditon:
+            self.break_page_conditon=0
+            self.payload['debut'] = '0'
 
 
 
-
-
-# cookie: PHPSESSID=9m4jgevdjs5use1kdg93aona59; 
-# accepte_cookie=1; 
-# accord_cookie=YES; __utma=71503701.53842636.1661162936.1661162936.1661162936.1; __utmc=71503701; __utmz=71503701.1661162936.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmt=1; __utmb=71503701.16.10.1661162936
-# origin: https://www.whed.net
-# referer: https://www.whed.net/results_institutions.php
-# sec-ch-ua: ".Not/A)Brand";v="99", "Google Chrome";v="103", "Chromium";v="103"
-# sec-ch-ua-mobile: ?0
-# sec-ch-ua-platform: "Linux"
-# sec-fetch-dest: document
-# sec-fetch-mode: navigate
-# sec-fetch-site: same-origin
-# sec-fetch-user: ?1
-# upgrade-insecure-requests: 1
-# user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
-
-#     def start_requests(self):
-#         # scrapy.Request(url=self.institute_url, callback=self.parse_countries_names)
-       
-#         yield scrapy.FormRequest(
-#             url=self.institute_url,
-#             method="POST",
-#             formdata=self.payload,
-#             callback=self.parse,
-#             cookies=self.cookies,
-#             headers=self.headers
-#         )
-
-#     # def parse_countries_names(self,response):
-#     #     print('In parsing functions')
-#     #     logging.debug(response.body)
-#     #     Country_names = response.xpath('//select[@id="Chp1"]/option/text()').getall()
-
-#     #     yield {
-#     #         'Counteries Names ' : Country_names
-#     #     }
-
-#     def parse(self, response):
-#         universities = response.xpath('//*[@title="More details"]/text()').getall()
-#         universities = [university.strip() for university in universities]
-#         for university in universities:
-#             print(university)

@@ -1,0 +1,548 @@
+INFO:scrapy.utils.log:Scrapy 2.6.1 started (bot: WHED)
+INFO:scrapy.utils.log:Versions: lxml 4.9.1.0, libxml2 2.9.14, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 22.4.0, Python 3.10.4 (main, Jun 29 2022, 12:14:53) [GCC 11.2.0], pyOpenSSL 21.0.0 (OpenSSL 3.0.2 15 Mar 2022), cryptography 3.4.8, Platform Linux-5.15.0-46-generic-x86_64-with-glibc2.35
+INFO:scrapy.crawler:Overridden settings:
+{'BOT_NAME': 'WHED',
+ 'NEWSPIDER_MODULE': 'WHED.spiders',
+ 'SPIDER_MODULES': ['WHED.spiders']}
+DEBUG:scrapy.utils.log:Using reactor: twisted.internet.epollreactor.EPollReactor
+INFO:scrapy.extensions.telnet:Telnet Password: 4e826bb2c2e2f17d
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+[]
+INFO:scrapy.core.engine:Spider opened
+INFO:scrapy.extensions.logstats:Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+ERROR:scrapy.utils.signal:Error caught on signal handler: <bound method TelnetConsole.start_listening of <scrapy.extensions.telnet.TelnetConsole object at 0x7fa1785f60e0>>
+Traceback (most recent call last):
+  File "/home/ifti/.local/lib/python3.10/site-packages/twisted/internet/tcp.py", line 1334, in startListening
+    skt.bind(addr)
+OSError: [Errno 98] Address already in use
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ifti/.local/lib/python3.10/site-packages/scrapy/utils/defer.py", line 169, in maybeDeferred_coro
+    result = f(*args, **kw)
+  File "/home/ifti/.local/lib/python3.10/site-packages/pydispatch/robustapply.py", line 55, in robustApply
+    return receiver(*arguments, **named)
+  File "/home/ifti/.local/lib/python3.10/site-packages/scrapy/extensions/telnet.py", line 65, in start_listening
+    self.port = listen_tcp(self.portrange, self.host, self)
+  File "/home/ifti/.local/lib/python3.10/site-packages/scrapy/utils/reactor.py", line 23, in listen_tcp
+    return reactor.listenTCP(x, factory, interface=host)
+  File "/home/ifti/.local/lib/python3.10/site-packages/twisted/internet/posixbase.py", line 565, in listenTCP
+    p.startListening()
+  File "/home/ifti/.local/lib/python3.10/site-packages/twisted/internet/tcp.py", line 1336, in startListening
+    raise CannotListenError(self.interface, self.port, le)
+twisted.internet.error.CannotListenError: Couldn't listen on 127.0.0.1:6073: [Errno 98] Address already in use.
+DEBUG:filelock:Attempting to acquire lock 140331480400128 on /home/ifti/.cache/python-tldextract/3.10.4.final__usr__7d8fdf__tldextract-3.3.1/publicsuffix.org-tlds/de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+DEBUG:filelock:Lock 140331480400128 acquired on /home/ifti/.cache/python-tldextract/3.10.4.final__usr__7d8fdf__tldextract-3.3.1/publicsuffix.org-tlds/de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+DEBUG:filelock:Attempting to release lock 140331480400128 on /home/ifti/.cache/python-tldextract/3.10.4.final__usr__7d8fdf__tldextract-3.3.1/publicsuffix.org-tlds/de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+DEBUG:filelock:Lock 140331480400128 released on /home/ifti/.cache/python-tldextract/3.10.4.final__usr__7d8fdf__tldextract-3.3.1/publicsuffix.org-tlds/de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://www.whed.net/results_institutions.php> (referer: None)
+DEBUG:scrapy.core.engine:Crawled (200) <POST https://www.whed.net/results_institutions.php> (referer: https://www.whed.net/results_institutions.php)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0> (referer: https://www.whed.net/results_institutions.php)
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Kardan University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sM2BRLSMkYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Aburayhan Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLVMoYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Afghan Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLDNAYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Afghan Pamir Higher Education Institute', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLjNAYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Afghan Swiss Higher Education Institute', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLSMkYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Afghanistan Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLFNgYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Afghanistan National Agricultural Sciences and Technology University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxTLUMkYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Ahlobait University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLTMwYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Ahmad Shah Abdali Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLDMkYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Al-Taqwa Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLCM0YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Alberoni University', 'University_url': 'https://www.whed.net/detail_institution.php?Jjo2MF0uIyRQCmAK'}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Alfalah University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BRLSMoYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Alghias Higher Education Islamic Institute', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BRLSMsYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Allamah Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLUMkYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'American University of Afghanistan', 'University_url': 'https://www.whed.net/detail_institution.php?Jjo2MF0uMyRWCmAK'}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Arakozia Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLCMsYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Aria University', 'University_url': 'https://www.whed.net/detail_institution.php?Jzo2MF0sM2BXLWBgYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Ariana University', 'University_url': 'https://www.whed.net/detail_institution.php?Jzo2MF0sM2BXLTBgYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Ashna Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLVMwYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Asia Higher Education Institute', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxZLUMoYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Avicenna University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxZLDM0YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Azhar Higher Educations Institute', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxZLTM4YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Badakhshan University', 'University_url': 'https://www.whed.net/detail_institution.php?Jzo2MF0sMyxWLGBgYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Badghis Higher Education Institute', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxTLUM0YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Baghlan University', 'University_url': 'https://www.whed.net/detail_institution.php?Jzo2MF0sMyxWLTBgYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Bakhtar University', 'University_url': 'https://www.whed.net/detail_institution.php?Jzo2MF0sMyxZLFBgYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Balkh University', 'University_url': 'https://www.whed.net/detail_institution.php?Jzo2MF0sMzBRLFBgYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Bamika Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLTNAYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Bamyan University', 'University_url': 'https://www.whed.net/detail_institution.php?Jzo2MF0sMzBSLjBgYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Bayan Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLVM4YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Bayazid Rokhan Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BRLDM8YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Benawa Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLjM4YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Bost University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLDMsYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Cheragh Medical Higher Education Institute', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxYLVM4YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Daikundi Higher Education Institute', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxTLVNEYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Danish Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BRLSMkYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Dawat University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQyhTLFM4YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Dunya University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxYLiM4YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Edrak Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLUMsYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Eshrag Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxZLCMoYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Esteghlal Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLFM4YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Esteqamat Higher Education Institute', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLTMoYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Fanoos Higher education Institute', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLTM8YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Farah Higher Education Institute', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxTLVMwYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Faryab University', 'University_url': 'https://www.whed.net/detail_institution.php?Jzo2MF0tQyhWLWBgYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Gawharshad University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxZLFM8YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Ghalib University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQyhTLTMkYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Ghalib University – Ghalib University - Kabul Branch', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BRLFNEYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Gharjistan University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxZLCNAYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Ghazi Amanullah Khan Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLUNgYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Ghazni Technical and Engineering University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxTLUNgYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Ghazni University', 'University_url': 'https://www.whed.net/detail_institution.php?Jzo2MF0tQzhVLDBgYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Ghor Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxTLVMsYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Hakim Sanayee University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLDMwYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Hariwa Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLUMwYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Helmand University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxTLUMwYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Herat University', 'University_url': 'https://www.whed.net/detail_institution.php?Jzo2MF0tUyRYLmBgYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Hewad Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxZLjMsYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Jahan Higher Education Institute', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLTMsYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Jami University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxZLSM8YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Jawzjan University', 'University_url': 'https://www.whed.net/detail_institution.php?Jzo2MF0uM0BXLmBgYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Kabul Polytechnic University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sM2BQLFM8YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Kabul University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sMyxVLTNgYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Kabul University of Medical Sciences - Abu Ali Ibn Sina', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sM2BQLFM4YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Kahkashan Sharq Higher Education Institute', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLSMoYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Kandahar University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sM2BQLjM0YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Karwan University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxYLjNEYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Kateb University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sM2BRLUM8YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Kawun Institute of HIgher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLiMsYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Khana-e-Noor Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxZLCMkYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Khatam Al-Nabieen University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sM2BTLEM4YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Khatam Al-Nabieen University – Khatam Al-Nabieen University - Ghazni Branch', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLVMsYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Khurasan University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sM2BTLSMoYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Khurshid Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLiM8YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Kohandazh Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BRLDNgYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Kunduz University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sM2BWLCMkYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Laghman University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxTLTNEYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Logar Higher Education Institute', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxTLVM4YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Maihan Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxZLUNgYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Maiwand Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sMyRTLCM8YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Malalay Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLDMoYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Maryam University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sMyRULENAYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Mashal University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxZLCNgYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Mawlana University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sMyRULiMoYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Merwais Neaka Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLCMoYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Mili Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLENAYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Muslim Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLjNEYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Mustaqbal Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLUMoYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Nangarhar University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sMyhTLSNgYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Naser Khosru Higher Education Institution', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxZLUM4YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Paiman Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLUNAYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Paktia University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sMyxSLVNgYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Paktika Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxTLUNEYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Pamir Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxZLUM0YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Panjshir Higher Education Institute', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxTLUM8YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Parwan University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sMyxTLjNgYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Payam Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLTMkYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Peshgam Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxYLVM8YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Qalam Higher education Institute', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLjM8YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=0>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Quds Higher Education Institute', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLiMwYApgCg=='}
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100> (referer: https://www.whed.net/results_institutions.php)
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Rabia Balkhi University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLDM8YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Rah-e-Saadat Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxZLiM0YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Rahnaward University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLTNEYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Rana University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxYLiM0YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Reshad Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLENEYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Rokhan Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLCNgYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Saba Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BRLEM0YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Sadat Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxYLVNAYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Salam University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQyhSLDNgYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Samangan Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sMzBTLSM8YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Sar-e-pul Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxTLVMkYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Sayed Jamaluddin Afghan University, Kunar', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxTLTNAYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Shaheed Rabbani Education University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sM2BQLFM0YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Shaikh Zayed University - Khost', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sMzRSLEM8YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Sharq Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLEM4YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Shirzai Afghan Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BRLDMkYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Spinghar Higher Education Institute', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxYLjMoYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Spinghar Higher Education Institute – Spinghar Higher Education Institute - Kabul Branch', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BRLSNgYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Sultan Mahmood Ghaznavi Higher Education Institute', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLiM0YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Tabesh University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxYLjMsYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Taj Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxZLCM8YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Takhar University', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sMzhRLCNAYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Tolo-e-Aftab Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxZLjMwYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Turkestan Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLjM0YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Uruzgan Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxTLVNgYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Wadie Helmand Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxZLSM4YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Wardak Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQzxTLVNAYApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Zam Zam Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLVM0YApgCg=='}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://www.whed.net/results_institutions.php?Chp1=Afghanistan&Chp0=&Chp2=&Chp4=&nbr_ref_pge=100&debut=100>
+{'Country': 'Afghanistan', 'Univesitsity Name ': 'Zawul Institute of Higher Education', 'University_url': 'https://www.whed.net/detail_institution.php?KDo2MF0sQ0BQLTNgYApgCg=='}
+INFO:scrapy.core.engine:Closing spider (finished)
+INFO:scrapy.statscollectors:Dumping Scrapy stats:
+{'downloader/request_bytes': 1983,
+ 'downloader/request_count': 4,
+ 'downloader/request_method_count/GET': 3,
+ 'downloader/request_method_count/POST': 1,
+ 'downloader/response_bytes': 45571,
+ 'downloader/response_count': 4,
+ 'downloader/response_status_count/200': 4,
+ 'elapsed_time_seconds': 3.488381,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 8, 24, 9, 37, 13, 642366),
+ 'httpcompression/response_bytes': 282523,
+ 'httpcompression/response_count': 4,
+ 'item_scraped_count': 129,
+ 'log_count/DEBUG': 138,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 9,
+ 'memusage/max': 66777088,
+ 'memusage/startup': 66777088,
+ 'request_depth_max': 2,
+ 'response_received_count': 4,
+ 'scheduler/dequeued': 4,
+ 'scheduler/dequeued/memory': 4,
+ 'scheduler/enqueued': 4,
+ 'scheduler/enqueued/memory': 4,
+ 'start_time': datetime.datetime(2022, 8, 24, 9, 37, 10, 153985)}
+INFO:scrapy.core.engine:Spider closed (finished)
+ERROR:scrapy.utils.signal:Error caught on signal handler: <bound method TelnetConsole.stop_listening of <scrapy.extensions.telnet.TelnetConsole object at 0x7fa1785f60e0>>
+Traceback (most recent call last):
+  File "/home/ifti/.local/lib/python3.10/site-packages/scrapy/utils/defer.py", line 169, in maybeDeferred_coro
+    result = f(*args, **kw)
+  File "/home/ifti/.local/lib/python3.10/site-packages/pydispatch/robustapply.py", line 55, in robustApply
+    return receiver(*arguments, **named)
+  File "/home/ifti/.local/lib/python3.10/site-packages/scrapy/extensions/telnet.py", line 72, in stop_listening
+    self.port.stopListening()
+AttributeError: 'TelnetConsole' object has no attribute 'port'
+INFO:scrapy.utils.log:Scrapy 2.6.1 started (bot: WHED)
+INFO:scrapy.utils.log:Versions: lxml 4.9.1.0, libxml2 2.9.14, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 22.4.0, Python 3.10.4 (main, Jun 29 2022, 12:14:53) [GCC 11.2.0], pyOpenSSL 21.0.0 (OpenSSL 3.0.2 15 Mar 2022), cryptography 3.4.8, Platform Linux-5.15.0-46-generic-x86_64-with-glibc2.35
+INFO:scrapy.crawler:Overridden settings:
+{'BOT_NAME': 'WHED',
+ 'DUPEFILTER_CLASS': 'scrapy.dupefilters.BaseDupeFilter',
+ 'LOGSTATS_INTERVAL': 0,
+ 'NEWSPIDER_MODULE': 'WHED.spiders',
+ 'SPIDER_MODULES': ['WHED.spiders']}
+DEBUG:scrapy.utils.log:Using reactor: twisted.internet.epollreactor.EPollReactor
+INFO:scrapy.extensions.telnet:Telnet Password: e302f59d156db22c
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+[]
+ERROR:scrapy.utils.signal:Error caught on signal handler: <bound method TelnetConsole.start_listening of <scrapy.extensions.telnet.TelnetConsole object at 0x7f6edf3020b0>>
+Traceback (most recent call last):
+  File "/home/ifti/.local/lib/python3.10/site-packages/twisted/internet/tcp.py", line 1334, in startListening
+    skt.bind(addr)
+OSError: [Errno 98] Address already in use
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ifti/.local/lib/python3.10/site-packages/scrapy/utils/defer.py", line 169, in maybeDeferred_coro
+    result = f(*args, **kw)
+  File "/home/ifti/.local/lib/python3.10/site-packages/pydispatch/robustapply.py", line 55, in robustApply
+    return receiver(*arguments, **named)
+  File "/home/ifti/.local/lib/python3.10/site-packages/scrapy/extensions/telnet.py", line 65, in start_listening
+    self.port = listen_tcp(self.portrange, self.host, self)
+  File "/home/ifti/.local/lib/python3.10/site-packages/scrapy/utils/reactor.py", line 23, in listen_tcp
+    return reactor.listenTCP(x, factory, interface=host)
+  File "/home/ifti/.local/lib/python3.10/site-packages/twisted/internet/posixbase.py", line 565, in listenTCP
+    p.startListening()
+  File "/home/ifti/.local/lib/python3.10/site-packages/twisted/internet/tcp.py", line 1336, in startListening
+    raise CannotListenError(self.interface, self.port, le)
+twisted.internet.error.CannotListenError: Couldn't listen on 127.0.0.1:6073: [Errno 98] Address already in use.
+INFO:scrapy.core.engine:Spider opened
+DEBUG:filelock:Attempting to acquire lock 140114151692832 on /home/ifti/.cache/python-tldextract/3.10.4.final__usr__7d8fdf__tldextract-3.3.1/publicsuffix.org-tlds/de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+DEBUG:filelock:Lock 140114151692832 acquired on /home/ifti/.cache/python-tldextract/3.10.4.final__usr__7d8fdf__tldextract-3.3.1/publicsuffix.org-tlds/de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+DEBUG:filelock:Attempting to release lock 140114151692832 on /home/ifti/.cache/python-tldextract/3.10.4.final__usr__7d8fdf__tldextract-3.3.1/publicsuffix.org-tlds/de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+DEBUG:filelock:Lock 140114151692832 released on /home/ifti/.cache/python-tldextract/3.10.4.final__usr__7d8fdf__tldextract-3.3.1/publicsuffix.org-tlds/de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://www.whed.net/detail_institution.php?Jzo2MF0sM2BXLWBgYApgCg==> (referer: None)
+INFO:scrapy.utils.log:Scrapy 2.6.1 started (bot: WHED)
+INFO:scrapy.utils.log:Versions: lxml 4.9.1.0, libxml2 2.9.14, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 22.4.0, Python 3.10.4 (main, Jun 29 2022, 12:14:53) [GCC 11.2.0], pyOpenSSL 21.0.0 (OpenSSL 3.0.2 15 Mar 2022), cryptography 3.4.8, Platform Linux-5.15.0-46-generic-x86_64-with-glibc2.35
+INFO:scrapy.crawler:Overridden settings:
+{'BOT_NAME': 'WHED',
+ 'DUPEFILTER_CLASS': 'scrapy.dupefilters.BaseDupeFilter',
+ 'LOGSTATS_INTERVAL': 0,
+ 'NEWSPIDER_MODULE': 'WHED.spiders',
+ 'SPIDER_MODULES': ['WHED.spiders']}
+DEBUG:scrapy.utils.log:Using reactor: twisted.internet.epollreactor.EPollReactor
+INFO:scrapy.extensions.telnet:Telnet Password: 74ef53459f8445e4
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+[]
+ERROR:scrapy.utils.signal:Error caught on signal handler: <bound method TelnetConsole.start_listening of <scrapy.extensions.telnet.TelnetConsole object at 0x7efff1fb5d20>>
+Traceback (most recent call last):
+  File "/home/ifti/.local/lib/python3.10/site-packages/twisted/internet/tcp.py", line 1334, in startListening
+    skt.bind(addr)
+OSError: [Errno 98] Address already in use
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ifti/.local/lib/python3.10/site-packages/scrapy/utils/defer.py", line 169, in maybeDeferred_coro
+    result = f(*args, **kw)
+  File "/home/ifti/.local/lib/python3.10/site-packages/pydispatch/robustapply.py", line 55, in robustApply
+    return receiver(*arguments, **named)
+  File "/home/ifti/.local/lib/python3.10/site-packages/scrapy/extensions/telnet.py", line 65, in start_listening
+    self.port = listen_tcp(self.portrange, self.host, self)
+  File "/home/ifti/.local/lib/python3.10/site-packages/scrapy/utils/reactor.py", line 23, in listen_tcp
+    return reactor.listenTCP(x, factory, interface=host)
+  File "/home/ifti/.local/lib/python3.10/site-packages/twisted/internet/posixbase.py", line 565, in listenTCP
+    p.startListening()
+  File "/home/ifti/.local/lib/python3.10/site-packages/twisted/internet/tcp.py", line 1336, in startListening
+    raise CannotListenError(self.interface, self.port, le)
+twisted.internet.error.CannotListenError: Couldn't listen on 127.0.0.1:6073: [Errno 98] Address already in use.
+INFO:scrapy.core.engine:Spider opened
+DEBUG:filelock:Attempting to acquire lock 139637727435056 on /home/ifti/.cache/python-tldextract/3.10.4.final__usr__7d8fdf__tldextract-3.3.1/publicsuffix.org-tlds/de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+DEBUG:filelock:Lock 139637727435056 acquired on /home/ifti/.cache/python-tldextract/3.10.4.final__usr__7d8fdf__tldextract-3.3.1/publicsuffix.org-tlds/de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+DEBUG:filelock:Attempting to release lock 139637727435056 on /home/ifti/.cache/python-tldextract/3.10.4.final__usr__7d8fdf__tldextract-3.3.1/publicsuffix.org-tlds/de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+DEBUG:filelock:Lock 139637727435056 released on /home/ifti/.cache/python-tldextract/3.10.4.final__usr__7d8fdf__tldextract-3.3.1/publicsuffix.org-tlds/de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://www.whed.net/detail_institution.php?Jzo2MF0sM2BXLWBgYApgCg==> (referer: None)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://www.whed.net/detail_institution.php?Jjo2MF0uIyRQCmAK> (referer: None)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://www.whed.net/detail_institution.php?KDo2MF0sQ0BRLSMsYApgCg==> (referer: None)
+INFO:scrapy.utils.log:Scrapy 2.6.1 started (bot: WHED)
+INFO:scrapy.utils.log:Versions: lxml 4.9.1.0, libxml2 2.9.14, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 22.4.0, Python 3.10.4 (main, Jun 29 2022, 12:14:53) [GCC 11.2.0], pyOpenSSL 21.0.0 (OpenSSL 3.0.2 15 Mar 2022), cryptography 3.4.8, Platform Linux-5.15.0-46-generic-x86_64-with-glibc2.35
+INFO:scrapy.crawler:Overridden settings:
+{'BOT_NAME': 'WHED',
+ 'DUPEFILTER_CLASS': 'scrapy.dupefilters.BaseDupeFilter',
+ 'LOGSTATS_INTERVAL': 0,
+ 'NEWSPIDER_MODULE': 'WHED.spiders',
+ 'SPIDER_MODULES': ['WHED.spiders']}
+DEBUG:scrapy.utils.log:Using reactor: twisted.internet.epollreactor.EPollReactor
+INFO:scrapy.extensions.telnet:Telnet Password: 14791e83a8f722b6
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+[]
+ERROR:scrapy.utils.signal:Error caught on signal handler: <bound method TelnetConsole.start_listening of <scrapy.extensions.telnet.TelnetConsole object at 0x7f43225634f0>>
+Traceback (most recent call last):
+  File "/home/ifti/.local/lib/python3.10/site-packages/twisted/internet/tcp.py", line 1334, in startListening
+    skt.bind(addr)
+OSError: [Errno 98] Address already in use
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ifti/.local/lib/python3.10/site-packages/scrapy/utils/defer.py", line 169, in maybeDeferred_coro
+    result = f(*args, **kw)
+  File "/home/ifti/.local/lib/python3.10/site-packages/pydispatch/robustapply.py", line 55, in robustApply
+    return receiver(*arguments, **named)
+  File "/home/ifti/.local/lib/python3.10/site-packages/scrapy/extensions/telnet.py", line 65, in start_listening
+    self.port = listen_tcp(self.portrange, self.host, self)
+  File "/home/ifti/.local/lib/python3.10/site-packages/scrapy/utils/reactor.py", line 23, in listen_tcp
+    return reactor.listenTCP(x, factory, interface=host)
+  File "/home/ifti/.local/lib/python3.10/site-packages/twisted/internet/posixbase.py", line 565, in listenTCP
+    p.startListening()
+  File "/home/ifti/.local/lib/python3.10/site-packages/twisted/internet/tcp.py", line 1336, in startListening
+    raise CannotListenError(self.interface, self.port, le)
+twisted.internet.error.CannotListenError: Couldn't listen on 127.0.0.1:6073: [Errno 98] Address already in use.
+INFO:scrapy.core.engine:Spider opened
+DEBUG:filelock:Attempting to acquire lock 139926284665376 on /home/ifti/.cache/python-tldextract/3.10.4.final__usr__7d8fdf__tldextract-3.3.1/publicsuffix.org-tlds/de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+DEBUG:filelock:Lock 139926284665376 acquired on /home/ifti/.cache/python-tldextract/3.10.4.final__usr__7d8fdf__tldextract-3.3.1/publicsuffix.org-tlds/de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+DEBUG:filelock:Attempting to release lock 139926284665376 on /home/ifti/.cache/python-tldextract/3.10.4.final__usr__7d8fdf__tldextract-3.3.1/publicsuffix.org-tlds/de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+DEBUG:filelock:Lock 139926284665376 released on /home/ifti/.cache/python-tldextract/3.10.4.final__usr__7d8fdf__tldextract-3.3.1/publicsuffix.org-tlds/de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://www.whed.net/detail_institution.php?Jjo2MF0uIyRQCmAK> (referer: None)
